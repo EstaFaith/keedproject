@@ -1,18 +1,27 @@
 package com.keedproject.controller;
 
+import com.keedproject.entity.Song;
+import com.keedproject.entity.Album;
+
 import java.util.ArrayList;
 
+/**
+ * The album is the 2nd level of the database.
+ * It has a title,image and then contains songs that you add to it.
+ * @author Esta Chioma
+ */
 public class AlbumController {
-    private String albumTitle;
+    Album album = new Album();
     private ArrayList<Song> songList = new ArrayList<Song>();
 
     /**
-     * Constructs a new Song object
+     * Constructs a new Album object
      * @param albumTitle The title of the album
      */
-    public AlbumController(String albumTitle)
+    public AlbumController(String albumTitle, String albumImageUrl)
     {
-        this.albumTitle = albumTitle;
+        albumTitle = album.getAlbumTitle();
+        albumImageUrl = album.getAlbumImageUrl();
     }
 
     /**
@@ -46,7 +55,7 @@ public class AlbumController {
      */
     public String getAlbumTitle()
     {
-        return albumTitle;
+        return album.getAlbumTitle();
     }
     /**
      * @return The list of songs
@@ -65,6 +74,6 @@ public class AlbumController {
                 return a;
             }
         }
-        return new AlbumController("");
+        return new AlbumController("","");
     }
 }

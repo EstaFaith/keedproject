@@ -1,27 +1,32 @@
-package com.keedproject.controller;
+package com.keedproject.entity;
+
+import com.keedproject.controller.AlbumController;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 public class Song {
-    /*TEMPORARY FILE TO TRY LIBRARY*/
-    private String title;
-    private String artist;
-    private String duration;
+    @Id
+    @GeneratedValue
+    private int songId;
 
-    private String albumStr;
+    /*TEMPORARY FILE TO TRY LIBRARY*/
+    private String songTitle;
+    private String songArtist;
+    private String songDuration;
+    private boolean songIsLiked = false;
+
+    private String songAlbumStr;
     private AlbumController album;
 
-    /**
-     * Constructs a new Song object
-     * @param title The title of the songs
-     * @param album The title of the album of the song
-     * @param artist The name of the artist
-     * @param duration The duration of the song
-     */
-    public Song(String title, String album, String artist, String duration)
+
+    public Song(String songTitle, String songAlbumStr, String songArtist, String songDuration, boolean songIsLiked)
     {
-        this.title = title;
-        this.albumStr = album;
-        this.artist = artist;
-        this.duration = duration;
+        this.songTitle = songTitle;
+        this.songAlbumStr = songAlbumStr;
+        this.songArtist = songArtist;
+        this.songDuration = songDuration;
+        this.songIsLiked = songIsLiked;
     }
     public String toString()
     {
@@ -34,8 +39,9 @@ public class Song {
      */
     public void setAlbum(AlbumController album)
     {
-        this.album = album;
+         this.album = album;
     }
+
     /**
      * Removes the song from the album
      */
@@ -49,32 +55,34 @@ public class Song {
      */
     public String getTitle()
     {
-        return title;
+        return songTitle;
     }
     /**
      * @return The name of the artist that made the song
      */
     public String getArtist()
     {
-        return artist;
+        return songArtist;
     }
     /**
      * @return The duration of the song
      */
     public String getDuration()
     {
-        return duration;
+        return songDuration;
     }
     /**
      * @return The name of the album.
      */
     public String getAlbumStr()
     {
-        return albumStr;
+        return songAlbumStr;
     }
     /**
      * @return the actual album object that the song is a part of
      */
+    public boolean songIsLiked(){return songIsLiked; }
+
     public AlbumController getAlbum()
     {
         return album;

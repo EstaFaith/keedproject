@@ -1,8 +1,15 @@
 package com.keedproject.controller;
+import com.keedproject.entity.Library;
+import com.keedproject.entity.Song;
+
 import java.util.ArrayList;
 
-
+/**
+ * The first level of the database. Contains an array of albums (all songs are in the album Likes).
+ * @author Esta Chioma
+ */
 public class LibraryController {
+    Library lib = new Library();
     private ArrayList<AlbumController> albumList = new ArrayList<AlbumController>();
 
     public String toString()
@@ -20,18 +27,12 @@ public class LibraryController {
         return str;
     }
 
-    /**
-     * Adds an album to the album list
-     * @param album The album that you want to add
-     */
+
     public void addAlbum(AlbumController album)
     {
         albumList.add(album);
     }
-    /**
-     * Removes an album from the list
-     * @param album The album that you want to remove
-     */
+
     public void removeAlbum(AlbumController album)
     {
         albumList.remove(album);
