@@ -37,17 +37,12 @@ public class LibraryController {
     {
         albumList.remove(album);
     }
-    /**
-     * @return The list of albums
-     */
+
     public ArrayList<AlbumController> getAlbumList()
     {
         return albumList;
     }
-    /**
-     * Returns all of the songs in the library
-     * @return the list of songs
-     */
+
     public ArrayList<Song> getAllSongs()
     {
         ArrayList<Song> songs = new ArrayList<Song>();

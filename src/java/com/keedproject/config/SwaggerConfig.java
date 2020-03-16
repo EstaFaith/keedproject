@@ -1,4 +1,4 @@
-/*package com.keedproject.config;
+package com.keedproject.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,4 +31,3 @@ public class SwaggerConfig {
     }
 
 }
-*/

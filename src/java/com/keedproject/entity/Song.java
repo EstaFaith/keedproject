@@ -35,52 +35,38 @@ public class Song {
 
     /**
      * Sets the album.
-     * @param album The album that the song is in
      */
     public void setAlbum(AlbumController album)
     {
          this.album = album;
     }
 
-    /**
-     * Removes the song from the album
-     */
+
     public void delSong()
     {
         this.album.removeSong(this);
     }
 
-    /**
-     * @return The title of the song
-     */
     public String getTitle()
     {
         return songTitle;
     }
-    /**
-     * @return The name of the artist that made the song
-     */
+
     public String getArtist()
     {
         return songArtist;
     }
-    /**
-     * @return The duration of the song
-     */
+
     public String getDuration()
     {
         return songDuration;
     }
-    /**
-     * @return The name of the album.
-     */
+
     public String getAlbumStr()
     {
         return songAlbumStr;
     }
-    /**
-     * @return the actual album object that the song is a part of
-     */
+
     public boolean songIsLiked(){return songIsLiked; }
 
     public AlbumController getAlbum()
